@@ -1,5 +1,4 @@
 var enterButton = document.getElementById("enter");
-var input = document.getElementById("userInput");
 var ul = document.querySelector("ul");
 var item = document.getElementsByTagName("li");
 
@@ -12,14 +11,15 @@ function listLength(){
 }
 
 function createListElement() {
-	var li = document.createElement("li"); // creates an element "li"
-	li.appendChild(document.createTextNode(input.value)); //makes text from input field the li text
-	ul.appendChild(li); //adds li to ul
-	input.value = ""; //Reset text input field
+	var input = document.getElementById("userInput").value;
+	var li = document.createElement("li"); 
+	var t = document.createTextNode(input);
+	li.appendChild(t); 
+	document.getElementById("listitems").appendChild(li); 
+	document.getElementById("input").value = ""; 
 
 
-	//START STRIKETHROUGH
-	// because it's in the function, it only adds it for new items
+	
 	function crossOut() {
 		li.classList.toggle("done");
 	}
@@ -45,20 +45,27 @@ function createListElement() {
 
 
 function addListAfterClick(){
-	if (inputLength() > 0) { //makes sure that an empty input field doesn't create a li
+	if (inputLength() > 0) { 
 		createListElement();
 	}
+	
 }
 
+
+
 function addListAfterKeypress(event) {
-	if (inputLength() > 0 && event.which ===13) { //this now looks to see if you hit "enter"/"return"
-		//the 13 is the enter key's keycode, this could also be display by event.keyCode === 13
+	if (inputLength() > 0 && event.which ===13) { 
 		createListElement();
 	} 
 }
 
+if(enterButton){
+	enterButton.addEventListener("click",addListAfterClick, false);
+}
+if(input){
+	input.addEventListener("click",addListAfterKeypress, false);
+}
+/*enterButton.addEventListener("click",addListAfterClick);
 
-enterButton.addEventListener("click",addListAfterClick);
-
-input.addEventListener("keypress", addListAfterKeypress);
+input.addEventListener("keypress", addListAfterKeypress);*/
 

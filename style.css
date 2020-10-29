@@ -38,7 +38,7 @@ p {
   padding: 5px 15px;
   border-radius: 5px;
   color: #04a1bf;
-  background-color: #025f70;
+  background-color: grey;
   transition: all 0.75s ease;
   -webkit-transition: all 0.75s ease;
   -moz-transition: all 0.75s ease;
@@ -48,7 +48,7 @@ p {
 }
 
 #enter:hover {
-  background-color: #02798f;
+  background-color: grey;
   color: #ffcd5d;
 }
 

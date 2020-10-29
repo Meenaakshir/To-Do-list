@@ -6,50 +6,43 @@
     <meta name="viewport=" content="width=device-width, initial-scale=1.0">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="myscript.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"-->
     <title> TODO </title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-    <section class="todoapp">
-        <header id="todo-list">
-            <h1> todos </h1>
-            <input type="text" id="task" class="new-todo" placeholder="What needs to be done ?">
-        </header>
-        <section class="main" style="display: none;">
-            <input id="toggle-all" class="toggle-all" type="checkbox" style="display:none">
-            <label for="toggle-all">Mark all as complete</label>
-            <ul class="todo-list"></ul>
-        </section>
-    </section>
-    <footer class="footer" style="display: none;">
-        <span class="todo-count"></span>
-        <ul class="filters">
-            <li>
-                <a href="#/" class="selected">All</a>
-            </li>
-            <li>
-                <a href="#/active">Active</a>
-            </li>
-            <li>
-                <a href="#/completed">Completed</a>
-            </li>
-        </ul>
-        <button class="clear-completed">Clear completed</button>
-    </footer>
-    </section>
-    <footer class="info" style="display: none;">
-        <p>Double-click to edit a todo</p>
-    
-    </footer>
-    <script src="node_modules/todomvc-common/base.js"></script>
-    <script src="js/helpers.js"></script>
-    
-    </body>
-    
-    </html>
+<div class="container">
+    <div class="row">
+        <div class="intro col-12">
+            <h1>todos</h1>
+            <div>
+                <div class="border1"></div>
+                
+                </div>
+            </div>
 
-    <script src="myscript.js"></script>
+           
+            <div class="row">
+                <div class="col-12">
+                    <input id="userInput" type="text" placeholder="What needs to be done ?" maxlength="27">
+                    <button id="enter"><i class="fas fa-pencil-alt"></i></button>
+                </div>
+            </div>
+
+            <!-- Empty List -->
+            <div class="row">
+                <div class="listItems col-12">
+                    <ul class="col-12 offset-0 col-sm-8 offset-sm-2">
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    
+
+    
 </body>
 
 </html>

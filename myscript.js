@@ -10,24 +10,20 @@ function listLength(){
 	return item.length;
 }
 
-function createListElement() {
-	var input = document.getElementById("userInput").value;
-	var li = document.createElement("li"); 
-	var t = document.createTextNode(input);
-	li.appendChild(t); 
-	document.getElementById("listitems").appendChild(li); 
-	document.getElementById("input").value = ""; 
 
+	function createListElement() {
+		var li = document.createElement("li"); 
+	var input = document.getElementById("userInput").value;
+	var t = document.createTextNode(input);
+	li.appendChild(t);
+	if (input === '') {
+		alert("You must write something!");
+	  } else {
+		document.getElementById("listitems").appendChild(li);
+	  }
+	  document.getElementById("listitems").value = "";
 
 	
-	function crossOut() {
-		li.classList.toggle("done");
-	}
-
-	li.addEventListener("click",crossOut);
-	//END STRIKETHROUGH
-
-
 	// START ADD DELETE BUTTON
 	var dBtn = document.createElement("button");
 	dBtn.appendChild(document.createTextNode("X"));
@@ -47,6 +43,7 @@ function createListElement() {
 function addListAfterClick(){
 	if (inputLength() > 0) { 
 		createListElement();
+		updatelistcount();
 	}
 	
 }
@@ -54,18 +51,28 @@ function addListAfterClick(){
 
 
 function addListAfterKeypress(event) {
+	
 	if (inputLength() > 0 && event.which ===13) { 
 		createListElement();
 	} 
 }
-
+var input = document.getElementById("listitems").appendChild(li);
 if(enterButton){
 	enterButton.addEventListener("click",addListAfterClick, false);
 }
 if(input){
 	input.addEventListener("click",addListAfterKeypress, false);
 }
-/*enterButton.addEventListener("click",addListAfterClick);
 
-input.addEventListener("keypress", addListAfterKeypress);*/
 
+function updatelistcount() {
+	var li = document.getElementsByTagName("li");
+	var x = li.length;
+	var count;
+	for(i=1;i<=x;++i)
+	{
+		count = 0;
+	}
+	count = i;
+	document.getElementById('counts').innerHTML = counting;
+}

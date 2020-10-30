@@ -37,7 +37,7 @@ p {
   border: none;
   padding: 5px 15px;
   border-radius: 5px;
-  color: #04a1bf;
+  color: #bbdae0;
   background-color: grey;
   transition: all 0.75s ease;
   -webkit-transition: all 0.75s ease;
@@ -89,7 +89,7 @@ li > button {
 
 input {
   border-radius: 5px;
-  min-width: 65%;
+  min-width: 30%;
   padding: 5px;
   border: none;
 }
